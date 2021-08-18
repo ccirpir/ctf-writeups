@@ -104,6 +104,7 @@ We found this archive with indecipherable text. Can you make sense of it?
 ```
 
 Well it was zip file that when unzip returned a bunch of ascii files. Since I recently attempted a challenge that involved ASCII art of commands, I immediately zoomed out on the text file to check.
+
 ![Qr-looking-text.png](images/Qr-looking-text%201.png)
 `424c426c447a576b414373507855716f674f6e666c58774c50486151784e4a737a46514654755944756171`  is an example of a  string I got from the qr code. 
 A separate text file produced a separate string `7554796f7049654e51576962746a71666b52724263594a776c6a6c675367554857665948515a50674a6a75` This suggest that only one text file had the flag  or we have to append each string together to get the resulting flag.
