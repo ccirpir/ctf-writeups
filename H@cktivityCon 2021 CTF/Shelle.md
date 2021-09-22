@@ -6,7 +6,7 @@ Shelle is a restricted environment to prevent any misuse, Please Enter 'HELP' to
 root@pshelle$
 ```
 ##  Analysis 
-![[h@ckactivity-shelle-splash.png]]
+![h@ckactivity-shelle-splash.png](images/)
 
 We need to break out of the shell,  The shell seems to be searching the user input for black-listed characters. Below are some of the special characters that I tested.
 ```
@@ -17,4 +17,4 @@ I discovered that the shell allows command substitution so I started looking thr
 ```
 cat $(echo -e "..\x2f..\x2f\x6f\x70\x74\x2f\x66\x6c\x61\x67\x2e\x74\x78\x74")
 ```
-![[h@ackactivity-shelle-flag.png]]
+![h@ackactivity-shelle-flag.png](images/h@ackactivity-shelle-flag.png)
