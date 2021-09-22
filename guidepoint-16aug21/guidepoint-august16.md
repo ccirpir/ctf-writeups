@@ -10,8 +10,9 @@ Decode this string!
 
 ## Problem
   The provided  string looks like a url encoded with the %'s in the string.' I used Cyberchef to explore common encoding schemes.
-![[Hexible Flag.png]]
-
+  
+  ![Hexible Flag](images/Hexible%20Flag%201.png)
+  
 GPSCTF{0e283dd7dc7c1d8b9f78ea16b02b2083}
 
 
@@ -29,7 +30,7 @@ Decode this string!
 ## Problem
 The challenge name suggest that it could be a combination of several  encodings applied to the same string several times. The string appears to use an alphabet of a-zA-Z0-9. Using the cyberchef magic function, it determined that it was base58.
 
-![[Baseic-Flag.png]]
+![Baseic-Flag 1.png](images/Baseic-Flag%201.png)
 
 # Description 
 ```
@@ -80,16 +81,16 @@ Seems to contain an alphabet in some of the packets.
 - 7232
 - URB_BULK in
 ```  
-![[USB-frame.png]]
+![USB-frame.png](images/USB-frame%201.png)
 The uRB_bulk ins seem to contain info about pdf files or other windows/mac strings. This was the filter I used to isolate the frames of interest.
 `((usb.dst == "host" ) && (usb.src == "1.6.1")) && (usb.endpoint_address == 0x81) and !usbms` useful filter, somehow need to extract it
 [Maybe a way to extract?](https://github.com/g4ngli0s/CTF/blob/master/AlexCTF2017/Fore3_usb_probing.md)
 By the second of night, I was still convinced that each frame had to be extracted and used to re-assemble a file of some kind. I also noticed that  Each non zero area of the left over capture field contained data related to file transfers.
-![[Difference-in-leftover.png]]
+![Difference-in-leftover%20.png](images/Difference-in-leftover%20.png)
 
 So I eventually got a hint that it is a simple challenge and that I may be over thinking. So I went back to wireshark and played around with some basic functions. Then I tried strings on the pcap and saw an odd looking string which turned out to be base64 encoded.
 
-![[shark-fail-flag.png]]
+![shark-fail-flag.png](images/shark-fail-flag%201.png)
 `StormCTF{Misc2:76eF124163763B352B988cBA1e775A8A}`
 
 ## Blocky
@@ -103,7 +104,8 @@ We found this archive with indecipherable text. Can you make sense of it?
 ```
 
 Well it was zip file that when unzip returned a bunch of ascii files. Since I recently attempted a challenge that involved ASCII art of commands, I immediately zoomed out on the text file to check.
-![[Qr-looking-text.png]]
+
+![Qr-looking-text.png](images/Qr-looking-text%201.png)
 `424c426c447a576b414373507855716f674f6e666c58774c50486151784e4a737a46514654755944756171`  is an example of a  string I got from the qr code. 
 A separate text file produced a separate string `7554796f7049654e51576962746a71666b52724263594a776c6a6c675367554857665948515a50674a6a75` This suggest that only one text file had the flag  or we have to append each string together to get the resulting flag.
 
@@ -149,7 +151,7 @@ def get_qr_content():
 ```
 
 I redirected  the output to stdout and then analyzed the payload in cyberchef.
-![[Hex-strings.png]]
+![Hex-strings.png](images/Hex-strings%201.png)
 
 After extracting all of the payloads, I was careless and didn't try to parse the output for the flag format. It wasn't until I was using [dcode](https://www.dcode.fr/) to see if the payload was a result of some cryptographic function that I discovered several occurrences of  `CTF`   and `flag`. 
 `flag3{6ea6d2a4e2d3a4bd5e275401aa086d86}`
@@ -180,7 +182,7 @@ S## ecret Service
 Docker Container Information:  
 Host: 10.10.100.200 Port: 42866/tcp
 ```
-![[Secret-serivce-example.png]]
+![Secret-serivce-example.png](images/Secret-serivce-example%201.png)
 There are 8 color options that change for each attempt. Convert the  date to it's integer representation and t add the future date. Then divide by the current number of colors, decrementing when the remainder is not zero. Once the remainder is zero, the corresponding color is the answer.
 `GPSCTF{952a1af38062c22b7187c97a52ac9bec}`
 
