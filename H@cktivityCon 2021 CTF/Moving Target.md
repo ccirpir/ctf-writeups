@@ -1,5 +1,5 @@
 # Another QR looking challenge
-![target_practice.gif](images/[target_practice.gif)
+![target_practice.gif](images/target_practice.gif)
 The challenge description mentions that the flag is only 24 hexadecimal characters, 
 ## Solution
 Each Frame of the Gif is a different [MaxiCode](https://en.wikipedia.org/wiki/MaxiCode) .  For each frame of the gif, I manually [Decoded](https://products.aspose.app/barcode/recognize/maxicode#/recognized) each Maxicode to see if the frame contained the flag. 

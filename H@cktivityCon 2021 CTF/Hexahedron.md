@@ -10,8 +10,10 @@ c=0x10652cdfaa6a6f6f688b98219cd32ce42c4d4df94afaea31cd94dfac50678b1f50f3ab1fd389
 
 ```
 My initial thought when reading the provided text file is that e is an exponent, c is cipher text and n is the modulus for  RSA due to convention. I attempted to [factor](https://www.alpertron.com.ar/ECM.HTM) the modulus but decided it was not fruitful as a teammate sent an article explaining the attack. The  [attack](https://www.johndcook.com/blog/2019/03/06/rsa-exponent-3/) essentially utilizes the tiny exponent used which allows the attacker to take the cube root of the encrypted message. [gmpy2](https://gmpy2.readthedocs.io/en/latest/overview.html) was used to avoid any rounding issues. I then used cyber-chef to convert the hex string to the corresponding ASCII string.
-
+```
 flag{080eaeb0d8f724bcb542562b3bb708e5}
+```
+
 ![h@ckactivity-gmyp2-work.png](images/h@ckactivity-gmyp2-work.png)
 
 

@@ -6,7 +6,7 @@ Shelle is a restricted environment to prevent any misuse, Please Enter 'HELP' to
 root@pshelle$
 ```
 ##  Analysis 
-![h@ckactivity-shelle-splash.png](images/)
+![h@ckactivity-shelle-splash.png](images/h@ckactivity-shelle-splash.png)
 
 We need to break out of the shell,  The shell seems to be searching the user input for black-listed characters. Below are some of the special characters that I tested.
 ```
